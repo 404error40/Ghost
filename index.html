@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ғарышкерлер Базасы</title>
+    <style>
+        /* 1. ГЛОБАЛДЫҚ АНИМАЦИЯЛАР */
+        @keyframes starsMove {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 5000px; }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px #00d4ff; }
+            50% { box-shadow: 0 0 20px #00d4ff; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        body {
+            background: #020408 url('https://www.transparenttextures.com/patterns/stardust.png');
+            animation: starsMove 200s linear infinite;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 50px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* 2. КАРТОЧКА СТИЛЬДЕРІ (Classes & IDs) */
+        .cosmonaut-card {
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid #00d4ff;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(8px);
+            animation: slideIn 0.8s ease-out;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cosmonaut-card:hover {
+            border-color: #ffd700;
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Аты-жөні (area1 - 1158-бет) */
+        .area1 {
+            font-size: 2.2rem;
+            color: #ffd700;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Өмір сүрген жылдары (area2 - 1158-бет) */
+        .area2 {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Ұшқан уақыты (ID #pink - 1162-бет) */
+        #pink {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        /* Нешінші адам (Box Style - 1156-бет) */
+        .flight-number {
+            border: 2px dashed #ffd700;
+            padding: 10px;
+            float: right;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .flight-number b {
+            font-size: 1.5rem;
+            color: #ffd700;
+        }
+
+        /* Қосымша мәтіндер (і тегі - 1164-бет) */
+        i {
+            color: #4fc3f7;
+            font-style: italic;
+        }
+
+        /* Түстердің үйлесімі */
+        .info-grid {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ғарышкерлер Әлемі</h1>
+
+        <div class="cosmonaut-card">
+            <div class="flight-number">
+                Сапар реті:<br><b>№1</b>
+            </div>
+            <span class="area1">Юрий Алексеевич Гагарин</span>
+            <span class="area2">1934 – 1968 жж.</span>
+            <div id="pink">Ұшқан күні: 12 сәуір 1961 жыл</div>
+            <div class="info-grid">
+                <p>Кемесі: <i>"Восток-1"</i>. Адамзат тарихында ғарышқа бірінші болып ұшқан жан. Жерді 108 минутта айналып өтті.</p>
+            </div>
+        </div>
+
+        <div class="cosmonaut-card" style="animation-delay: 0.2s;">
+            <div class="flight-number">
+                Сапар реті:<br><b>№10</b>
+            </div>
+            <span class="area1">Валентина Владимировна Терешкова</span>
+            <span class="area2">1937 ж. – қазіргі уақыт</span>
+            <div id="pink" style="background: rgba(255, 0, 128, 0.2); border-color: #ff0080; color: #ff0080;">
+                Ұшқан күні: 16 маусым 1963 жыл
+            </div>
+            <div class="info-grid">
+                <p>Кемесі: <i>"Восток-6"</i>. Әлемдегі ғарышқа ұшқан тұңғыш әйел адам. Ол ғарышта 3 тәулікке жуық болды.</p>
+            </div>
+        </div>
+
+        <div class="cosmonaut-card" style="animation-delay: 0.4s;">
+            <div class="flight-number">
+                Сапар реті:<br><b>№38</b>
+            </div>
+            <span class="area1">Нил Олден Армстронг</span>
+            <span class="area2">1930 – 2012 жж.</span>
+            <div id="pink">Ұшқан күні: 16 шілде 1969 жыл</div>
+            <div class="info-grid">
+                <p>Кемесі: <i>"Apollo 11"</i>. Ай бетіне аяқ басқан бірінші адам. Ай бетінде 2 сағаттан астам уақыт өткізді.</p>
+            </div>
+        </div>
+
+        <div class="cosmonaut-card" style="animation-delay: 0.6s;">
+            <div class="flight-number">
+                Сапар реті:<br><b>№256</b>
+            </div>
+            <span class="area1">Тоқтар Оңғарбайұлы Әубәкіров</span>
+            <span class="area2">1946 ж. – қазіргі уақыт</span>
+            <div id="pink" style="border-color: #ffd700; color: #ffd700;">
+                Ұшқан күні: 2 қазан 1991 жыл
+            </div>
+            <div class="info-grid">
+                <p>Кемесі: <i>"Союз ТМ-13"</i>. Қазақтың тұңғыш ғарышкері. Байқоңырдан ұшып, ғарышта 7 тәуліктен астам зерттеу жүргізді.</p>
+            </div>
+        </div>
+
+        <div class="cosmonaut-card" style="animation-delay: 0.8s;">
+            <div class="flight-number">
+                Сапар реті:<br><b>№309</b>
+            </div>
+            <span class="area1">Талғат Амангелдіұлы Мұсабаев</span>
+            <span class="area2">1951 ж. – қазіргі уақыт</span>
+            <div id="pink">Ұшқан жылы: 1994, 1998, 2001 жж.</div>
+            <div class="info-grid">
+                <p>Кемесі: <i>"Союз ТМ-19"</i> (және т.б.). Ғарышқа 3 рет ұшқан қазақ азаматы. Ашық ғарышта 40 сағаттан астам жұмыс істеді.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="color: #4fc3f7; padding: 40px;">
+        © 2024 Барлық деректер кітаптағы CSS стильдерімен өңделді.
+    </footer>
+
+</body>
+</html>
