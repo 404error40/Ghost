@@ -10,20 +10,13 @@
             from { background-position: 0 0; }
             to { background-position: -10000px 5000px; }
         }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px #00d4ff; }
-            50% { box-shadow: 0 0 20px #00d4ff; }
-        }
-
-        @keyframes slideIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
+        }
+        @keyframes slideIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         body {
@@ -53,7 +46,6 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        /* 2. КАРТОЧКА СТИЛЬДЕРІ (Classes & IDs) */
         .cosmonaut-card {
             background: rgba(10, 25, 47, 0.8);
             border: 1px solid #00d4ff;
@@ -63,35 +55,11 @@
             backdrop-filter: blur(8px);
             animation: slideIn 0.8s ease-out;
             transition: 0.4s;
-            position: relative;
-            overflow: hidden;
         }
 
-        .cosmonaut-card:hover {
-            border-color: #ffd700;
-            transform: scale(1.03);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-        }
-
-        /* Аты-жөні (area1 - 1158-бет) */
-        .area1 {
-            font-size: 2.2rem;
-            color: #ffd700;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.4);
-        }
-
-        /* Өмір сүрген жылдары (area2 - 1158-бет) */
-        .area2 {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* Ұшқан уақыты (ID #pink - 1162-бет) */
+        .area1 { font-size: 2.2rem; color: #ffd700; font-weight: bold; display: block; }
+        .area2 { font-size: 1.2rem; color: #a0a0a0; margin-bottom: 20px; display: block; }
+        
         #pink {
             background: rgba(0, 212, 255, 0.2);
             color: #00d4ff;
@@ -103,34 +71,50 @@
             margin-bottom: 15px;
         }
 
-        /* Нешінші адам (Box Style - 1156-бет) */
-        .flight-number {
-            border: 2px dashed #ffd700;
-            padding: 10px;
-            float: right;
+        /* КЕРІ БАЙЛАНЫС БӨЛІМІ */
+        .feedback-section {
+            background: rgba(20, 40, 70, 0.9);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
             text-align: center;
-            border-radius: 10px;
-            background: rgba(255, 215, 0, 0.1);
         }
 
-        .flight-number b {
-            font-size: 1.5rem;
-            color: #ffd700;
+        .stars { font-size: 2.5rem; margin-bottom: 20px; }
+        .star { cursor: pointer; color: #555; transition: 0.3s; }
+        .star.active { color: #ffd700; text-shadow: 0 0 15px #ffd700; }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #00d4ff;
+            border-radius: 15px;
+            color: white;
+            padding: 15px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-family: inherit;
         }
 
-        /* Қосымша мәтіндер (і тегі - 1164-бет) */
-        i {
-            color: #4fc3f7;
-            font-style: italic;
+        .send-btn {
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: 15px 60px;
+            border-radius: 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        /* Түстердің үйлесімі */
-        .info-grid {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 15px;
-            margin-top: 15px;
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
         }
-
     </style>
 </head>
 <body>
@@ -139,74 +123,58 @@
         <h1>Ғарышкерлер Әлемі</h1>
 
         <div class="cosmonaut-card">
-            <div class="flight-number">
-                Сапар реті:<br><b>№1</b>
-            </div>
             <span class="area1">Юрий Алексеевич Гагарин</span>
             <span class="area2">1934 – 1968 жж.</span>
             <div id="pink">Ұшқан күні: 12 сәуір 1961 жыл</div>
-            <div class="info-grid">
-                <p>Кемесі: <i>"Восток-1"</i>. Адамзат тарихында ғарышқа бірінші болып ұшқан жан. Жерді 108 минутта айналып өтті.</p>
-            </div>
+            <p>Кемесі: <i>"Восток-1"</i>. Адамзат тарихында ғарышқа бірінші болып ұшқан жан.</p>
         </div>
 
-        <div class="cosmonaut-card" style="animation-delay: 0.2s;">
-            <div class="flight-number">
-                Сапар реті:<br><b>№10</b>
-            </div>
-            <span class="area1">Валентина Владимировна Терешкова</span>
-            <span class="area2">1937 ж. – қазіргі уақыт</span>
-            <div id="pink" style="background: rgba(255, 0, 128, 0.2); border-color: #ff0080; color: #ff0080;">
-                Ұшқан күні: 16 маусым 1963 жыл
-            </div>
-            <div class="info-grid">
-                <p>Кемесі: <i>"Восток-6"</i>. Әлемдегі ғарышқа ұшқан тұңғыш әйел адам. Ол ғарышта 3 тәулікке жуық болды.</p>
-            </div>
-        </div>
-
-        <div class="cosmonaut-card" style="animation-delay: 0.4s;">
-            <div class="flight-number">
-                Сапар реті:<br><b>№38</b>
-            </div>
-            <span class="area1">Нил Олден Армстронг</span>
-            <span class="area2">1930 – 2012 жж.</span>
-            <div id="pink">Ұшқан күні: 16 шілде 1969 жыл</div>
-            <div class="info-grid">
-                <p>Кемесі: <i>"Apollo 11"</i>. Ай бетіне аяқ басқан бірінші адам. Ай бетінде 2 сағаттан астам уақыт өткізді.</p>
-            </div>
-        </div>
-
-        <div class="cosmonaut-card" style="animation-delay: 0.6s;">
-            <div class="flight-number">
-                Сапар реті:<br><b>№256</b>
-            </div>
+        <div class="cosmonaut-card">
             <span class="area1">Тоқтар Оңғарбайұлы Әубәкіров</span>
             <span class="area2">1946 ж. – қазіргі уақыт</span>
-            <div id="pink" style="border-color: #ffd700; color: #ffd700;">
-                Ұшқан күні: 2 қазан 1991 жыл
-            </div>
-            <div class="info-grid">
-                <p>Кемесі: <i>"Союз ТМ-13"</i>. Қазақтың тұңғыш ғарышкері. Байқоңырдан ұшып, ғарышта 7 тәуліктен астам зерттеу жүргізді.</p>
-            </div>
+            <div id="pink">Ұшқан күні: 2 қазан 1991 жыл</div>
+            <p>Кемесі: <i>"Союз ТМ-13"</i>. Қазақтың тұңғыш ғарышкері.</p>
         </div>
 
-        <div class="cosmonaut-card" style="animation-delay: 0.8s;">
-            <div class="flight-number">
-                Сапар реті:<br><b>№309</b>
+        <div class="feedback-section">
+            <h2 style="color: #ffd700;">Сайтты бағалаңыз</h2>
+            <div class="stars">
+                <span class="star" onclick="setRating(1)">★</span>
+                <span class="star" onclick="setRating(2)">★</span>
+                <span class="star" onclick="setRating(3)">★</span>
+                <span class="star" onclick="setRating(4)">★</span>
+                <span class="star" onclick="setRating(5)">★</span>
             </div>
-            <span class="area1">Талғат Амангелдіұлы Мұсабаев</span>
-            <span class="area2">1951 ж. – қазіргі уақыт</span>
-            <div id="pink">Ұшқан жылы: 1994, 1998, 2001 жж.</div>
-            <div class="info-grid">
-                <p>Кемесі: <i>"Союз ТМ-19"</i> (және т.б.). Ғарышқа 3 рет ұшқан қазақ азаматы. Ашық ғарышта 40 сағаттан астам жұмыс істеді.</p>
-            </div>
+            <textarea id="userComment" placeholder="Пікіріңізді осында жазыңыз..."></textarea>
+            <button class="send-btn" onclick="sendToWhatsApp()">Жіберу</button>
         </div>
-
     </div>
 
-    <footer style="color: #4fc3f7; padding: 40px;">
-        © 2024 Барлық деректер кітаптағы CSS стильдерімен өңделді.
-    </footer>
+    <script>
+        let currentRating = 0;
 
+        function setRating(n) {
+            currentRating = n;
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                star.classList.toggle('active', index < n);
+            });
+        }
+
+        function sendToWhatsApp() {
+            const phone = "77028479897"; // Сенің нөмірің
+            const comment = document.getElementById('userComment').value;
+
+            if (currentRating === 0) {
+                alert("Өтініш, алдымен жұлдызшалармен баға беріңіз!");
+                return;
+            }
+
+            const text = `Ғарышкерлер сайтына баға: ${currentRating} жұлдыз ⭐\nПікір: ${comment}`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+            
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
